@@ -149,4 +149,7 @@ static const void *AlertCompletionKey                          = &AlertCompletio
     objc_setAssociatedObject(self, AlertCompletionKey, completionBlock, OBJC_ASSOCIATION_COPY);
 }
 
+-(void)testMainFolder() {
+    //Test Something Main
+}
 @end;
