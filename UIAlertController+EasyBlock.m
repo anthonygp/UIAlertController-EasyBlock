@@ -27,7 +27,7 @@
 //
 
 
-#import "UIAlertController+EasyBlock"
+#import "UIAlertController+EasyBlock.h"
 #import <objc/runtime.h>
 
 
@@ -131,7 +131,7 @@ static const void *AlertCompletionKey                          = &AlertCompletio
                                tapBlock:(nullable UIAlertCompletionBlock)tapBlock {
     
     
-    UIAlertController * alert=   [self alertControllerWithTitle:title message:title preferedStyle:preferredStyle cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles tapBlock:tapBlock];
+    UIAlertController * alert=   [self alertControllerWithTitle:title message:message preferedStyle:preferredStyle cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles tapBlock:tapBlock];
     [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
     return alert;
 }
@@ -149,4 +149,4 @@ static const void *AlertCompletionKey                          = &AlertCompletio
     objc_setAssociatedObject(self, AlertCompletionKey, completionBlock, OBJC_ASSOCIATION_COPY);
 }
 
-@end;
+@end
